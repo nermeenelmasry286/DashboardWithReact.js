@@ -1,6 +1,8 @@
 import React from 'react';
 import { GeneralForm } from '../components/AddProductComponents/GeneralForm';
 import { PriceAndStock } from '../components/AddProductComponents/PriceAndStock';
+import { UploadImgForm} from '../components/AddProductComponents/UploadImg';
+
 
 
 export function AddProduct() {
@@ -13,7 +15,7 @@ export function AddProduct() {
           <PriceAndStock/>
         </div>
         <div className="col-12 col-md-6">
-          
+          <UploadImgForm/>
          
         </div>
       </div>
