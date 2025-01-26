@@ -10,20 +10,20 @@ export const Container = styled.div`
   padding: 10px; 
   border: 2px solid rgb(255, 255, 255); 
   box-shadow: rgba(133, 189, 215, 0.88) 0px 10px 10px -8px; 
-  margin: 10px; 
+  margin: 15px; 
 `;
 
 
 export const Heading = styled.h2`
-  font-weight: 500;
-  font-size: 14px; 
+  font-weight: 900;
+  font-size: 25px; 
   color: rgb(16, 137, 211);
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 `;
 
 
 export const StyledForm = styled(Form)`
-  margin-top: 10px; 
+  margin-top: 5px; 
 
   .form-control {
     width: 100%;
@@ -33,10 +33,10 @@ export const StyledForm = styled(Form)`
     margin-top: 2px; 
     padding: 5px 10px; 
     box-shadow: #cff0ff 0px 4px 4px -3px; 
-    font-size: 12px; 
+    font-size: 16px; 
 
     &::placeholder {
-      font-size: 12px;
+      font-size: 16px;
       color: rgb(170, 170, 170);
     }
 
@@ -47,13 +47,13 @@ export const StyledForm = styled(Form)`
   }
 
   .form-check-label {
-    font-size: 12px;
+    font-size: 16px;
     margin-bottom: 1px; 
   }
 
   label {
     margin-bottom: 2px; 
-    font-size: 13px; 
+    font-size: 16px; 
   }
 `;
 

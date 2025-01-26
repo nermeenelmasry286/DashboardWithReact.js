@@ -38,7 +38,7 @@ export function UploadImgForm() {
               style={{
                 width: '100%',
                 maxWidth: '300px',
-                height: '190px',
+                height: '200px',
                 borderRadius: '8px',
                 border: '2px dashed #ccc',
                 display: 'block',
