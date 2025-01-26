@@ -1,7 +1,7 @@
 // GeneralForm.jsx
 import React from 'react';
 import Form from 'react-bootstrap/Form';
-import { Container, Heading, StyledForm } from '../../Custom/StyledGeneralForm';
+import { Container, Heading, StyledForm } from '../../Custom/MainForm';
 
 export function GeneralForm() {
   return (

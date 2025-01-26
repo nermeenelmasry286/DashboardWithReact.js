@@ -1,8 +1,8 @@
-// Styled Button
+
 import styled from 'styled-components';
 import Button from 'react-bootstrap/Button';
 export const StyledButton = styled(Button)`
-//   display: block;
+
   font-size: 13px; 
   font-weight: bold;
   background: linear-gradient(45deg, rgb(16, 137, 211) 0%, rgb(18, 177, 209) 100%);

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
-import { Container, Heading, StyledForm } from '../../Custom/StyledGeneralForm';
+import { Container, Heading, StyledForm } from '../../Custom/MainForm';
 import {StyledButton} from '../../Custom/MainButton';
 
 export function AddCategoryForm() {
