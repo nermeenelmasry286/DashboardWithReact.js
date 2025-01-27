@@ -6,8 +6,8 @@ import { FaStar } from "react-icons/fa6";
 
 export function ProductDetails() {
   return (
-    <main className="container">
-      <h3 style={{ color: "#1091d3", textAlign: "center", marginTop: "15px" }}>
+    <main className="container" style={{marginTop:'90px'}}>
+      <h3 style={{ color: "#1091d3", textAlign: "center", marginTop: "30px" ,marginBottom:'30px'}}>
         Product Details
       </h3>
 
@@ -17,7 +17,7 @@ export function ProductDetails() {
             {/* Left Section */}
             <Col xs={12} md={6} className="text-center">
               <Image
-                src="../../public/images/Capture.PNG"
+                src="/images/Capture.PNG"
                 style={{
                   width: "100%",
                   maxWidth: "450px",

@@ -7,7 +7,7 @@ import {StyledButton} from '../Custom/MainButton';
 import { FaCheck } from "react-icons/fa";
 export function AddProduct() {
   return (
-    <main className='container'>
+    <main className='container' style={{marginTop:'70px'}}>
      <header style={{  margin: '2px' }}>
         <h3 style={{ color: '#1091d3', display:'inline-block',margin:'10px'}}>Add New Product</h3>
         <StyledButton >

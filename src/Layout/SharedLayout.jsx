@@ -1,8 +1,9 @@
 import React from 'react';
 import { Header } from '../components/Header';
-// import { AddProduct } from '../Pages/AddProduct';
+import { AddProduct } from '../Pages/AddProduct';
 // import {Products} from '../Pages/Products';
-import {ProductDetails} from '../Pages/ProductDetails';
+// import {ProductDetails} from '../Pages/ProductDetails';
+
 
 export function SharedLayout() {
   return (
@@ -12,9 +13,10 @@ export function SharedLayout() {
     {/* Main Content */}
     <div className="col-md-12">
       <Header />
-      {/* <AddProduct /> */}
+      <AddProduct />
       {/* <Products/> */}
-      <ProductDetails />
+      {/* <ProductDetails /> */}
+      
 
     </div>
   </div>
