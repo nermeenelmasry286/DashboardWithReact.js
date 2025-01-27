@@ -1,26 +1,16 @@
 import React from 'react';
 import { Header } from '../components/Header';
-// import { AddProduct } from '../Pages/AddProduct';
-import {Products} from '../Pages/Products';
-// import {ProductDetails} from '../Pages/ProductDetails';
-
+import { Outlet } from 'react-router-dom'; // Import Outlet for nested routes
 
 export function SharedLayout() {
   return (
     <div className="container-fluid p-0">
-  
-
-    {/* Main Content */}
-    <div className="col-md-12">
       <Header />
-      {/* <AddProduct /> */}
-      <Products/>
-      {/* <ProductDetails /> */}
       
-
+      
+      <div className="content-wrapper">
+        <Outlet /> 
+      </div>
     </div>
-  </div>
-
-
   );
 }

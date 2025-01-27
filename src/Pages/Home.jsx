@@ -1,8 +1,9 @@
 import React from 'react'
 
-export default function Home() {
+export function Home() {
   return (
-    <div>
+    <div style={{marginLeft:'100px',marginTop:'200px'}}>
+      i am home page
       
     </div>
   )

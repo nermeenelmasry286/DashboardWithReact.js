@@ -17,7 +17,7 @@ export function ProductDetails() {
             {/* Left Section */}
             <Col xs={12} md={6} className="text-center">
               <Image
-                src="/images/Capture.PNG"
+                src="/images/1.jpg"
                 style={{
                   width: "100%",
                   maxWidth: "450px",
