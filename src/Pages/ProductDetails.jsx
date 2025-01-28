@@ -3,6 +3,8 @@ import { Image, Container, Row, Col } from "react-bootstrap";
 import { StyledTableContainer } from "../Custom/MainTable";
 import { StyledButton } from "../Custom/MainButton";
 import { FaStar } from "react-icons/fa6";
+import { Products } from './Products';
+import { Link } from 'react-router-dom';
 
 export function ProductDetails() {
   return (
@@ -45,7 +47,7 @@ export function ProductDetails() {
                <h4>Size:</h4>
                <h4>Gender:</h4>
                <h4>Category:</h4>
-              <StyledButton className="mt-3">Back to Products</StyledButton>
+             <Link to={'/Products'}><StyledButton className="mt-3">Back to Products</StyledButton></Link> 
             </Col>
 
             

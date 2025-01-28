@@ -3,7 +3,25 @@ import { StyledTableContainer, StyledTable } from "../Custom/MainTable";
 import { FaStar } from "react-icons/fa6";
 import { FaEdit,FaEye } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
-export function ProductList() {
+import { Link } from "react-router-dom";
+import { useState,useEffect } from 'react';
+import{getProducts} from '../Api/productApi'
+
+export  function ProductList() {
+
+  
+  const [product,setProduct] = useState([]);
+  
+   
+  useEffect(()=>{
+
+    getProducts().then((response)=>{
+      setProduct(response.data)
+  
+    })
+
+  },[])
+  
   return (
     
     <StyledTableContainer>
@@ -24,8 +42,10 @@ export function ProductList() {
       <tbody >
 
         
-        <tr>
-          <td >1</td>
+        {
+          product.map((product)=>(
+            <tr key={product.id}>
+          <td >{product.id}</td>
            <td> 
             <div className="d-flex flex-column align-items-center">
             <img
@@ -33,26 +53,37 @@ export function ProductList() {
                 alt="Jacket"
                 style={{ width: "50px", height: "50px"}}
               />
-               <p>Jacket</p>
+               <p>{product.name}</p>
 
 
             </div>
             
             </td>
-           <td>men's wears</td>
-           <td>20$</td>
-           <td>170</td>
-           <td><div style={{ color: "yellow", fontSize: "1.5rem",display:'flex',justifyContent:'center',alignItems:'center'}}>
+           <td>{product.category}</td>
+           <td>{product.price}$</td>
+           <td>{product.stock}</td>
+           {/* <td><div style={{ color: "yellow", fontSize: "1.5rem",display:'flex',justifyContent:'center',alignItems:'center'}}>
                            <FaStar />
                            <FaStar />
                            <FaStar />
                            <FaStar />
                            <FaStar />
-                         </div></td>
-           <td>23</td>
-           <td>10%</td>
-           <td><div style={{ fontSize: "1.5rem",display:'flex',gap:'10px',justifyContent:'center',alignItems:'center' }}><FaEdit style={{color:'#78ca78'}} /><FaEye style={{color:'rgb(108 180 202)'}} /><MdDelete style={{color:'rgb(255 69 69)'}}/></div></td>
+                         </div></td> */}
+          <td>{product.rating}</td>             
+           <td>{product.order}</td>
+           <td>{product.sales}</td>
+           <td>
+            <div style={{ fontSize: "1.5rem",display:'flex',gap:'10px',justifyContent:'center',alignItems:'center' }}>
+            <Link to={`${product.id}/edit`}><FaEdit style={{color:'#78ca78'}} /></Link>
+            <Link to={`${product.id}`}><FaEye style={{color:'rgb(108 180 202)'}} /></Link>
+            <MdDelete style={{color:'rgb(255 69 69)'}}/>
+            </div>
+            </td>
         </tr>
+        
+
+          ))
+        }
         
         
         
