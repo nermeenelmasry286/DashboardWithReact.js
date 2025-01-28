@@ -5,7 +5,7 @@ import { FaEdit,FaEye } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { useState,useEffect } from 'react';
-import{getProducts} from '../Api/productApi'
+import{deleteProduct, getProducts} from '../Api/productApi'
 
 export  function ProductList() {
 
@@ -21,6 +21,11 @@ export  function ProductList() {
     })
 
   },[])
+  const deleteHandler= async(id)=>{
+
+    await deleteProduct(id)
+    setProduct(product.filter((product)=>product.id!==id))
+  }
   
   return (
     
@@ -76,7 +81,7 @@ export  function ProductList() {
             <div style={{ fontSize: "1.5rem",display:'flex',gap:'10px',justifyContent:'center',alignItems:'center' }}>
             <Link to={`${product.id}/edit`}><FaEdit style={{color:'#78ca78'}} /></Link>
             <Link to={`${product.id}`}><FaEye style={{color:'rgb(108 180 202)'}} /></Link>
-            <MdDelete style={{color:'rgb(255 69 69)'}}/>
+            <MdDelete style={{color:'rgb(255 69 69)'}} onClick={()=>deleteHandler(product.id)}/>
             </div>
             </td>
         </tr>
