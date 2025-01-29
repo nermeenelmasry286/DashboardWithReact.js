@@ -1,10 +1,11 @@
 import React from 'react'
+import styles from '../styles/style.module.css'
 
 export function Home() {
   return (
-    <div style={{marginLeft:'100px',marginTop:'200px'}}>
+    <main className={`container ${styles.customMargin}`}>
       i am home page
       
-    </div>
+    </main>
   )
 }

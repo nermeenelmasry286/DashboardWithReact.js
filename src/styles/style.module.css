@@ -1,24 +1,37 @@
-/* Ensure no horizontal overflow */
-body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
+
+.customMargin {
+  margin-top: 120px;
+  margin-bottom: 70px;
+}
+.mainHeader{
+  color: #1091d3;
+   text-align: center;
+   background-color: #bfd3dd;
+   height: 50px;
+   line-height: 50px;
+   border-radius: 4px;
+   
+  
 }
 
-/* Responsive utility for margins and paddings */
-@media (max-width: 768px) {
-  .container-fluid {
-    padding: 0 10px;
-  }
 
-  .offcanvas-body {
-    padding: 10px;
-  }
+.productDescripition {
+  font-size: 1rem; 
+  font-weight: normal; 
 }
 
-@media (min-width: 768px) {
-  .container-fluid {
-    padding: 0 20px;
-  }
+.productTitle {
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+.productDetails {
+  font-size: 1rem;
+  font-weight: normal;
+}
+.productImage{
+  width: 100%;
+  max-width : 450px;
+  height: auto;
 }
 

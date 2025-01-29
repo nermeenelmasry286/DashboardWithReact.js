@@ -6,11 +6,12 @@ import {AddCategoryForm} from '../components/AddProductComponents/AddCategory';
 import {StyledButton} from '../Custom/MainButton';
 import { FaCheck } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import styles from '../styles/style.module.css';
 export function AddProduct() {
   return (
-    <main className='container' style={{marginTop:'73px'}}>
+    <main className={`container ${styles.customMargin}`}>
      <header style={{  margin: '2px' }}>
-        <h3 style={{ color: '#1091d3', display:'inline-block',margin:'10px'}}>Add New Product</h3>
+        <h3 className={`${styles.mainHeader}`}>Add New Product</h3>
        
        <Link to={'/Products'}>
        <StyledButton >
@@ -18,7 +19,7 @@ export function AddProduct() {
         </StyledButton>
        </Link> 
       </header>
-      <div className="row " style={{ width: '100%' }}>
+      <div className="row w-100 " >
         <div className="col-12 col-md-6">
           <GeneralForm />
           <PriceAndStock/>
