@@ -54,7 +54,7 @@ export  function ProductList() {
            <td> 
             <div className="d-flex flex-column align-items-center">
             <img
-                src="/images/1.jpg"
+                src={product.img}
                 alt="Jacket"
                 style={{ width: "50px", height: "50px"}}
               />

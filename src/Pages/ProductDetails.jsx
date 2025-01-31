@@ -28,7 +28,7 @@ export function ProductDetails() {
             {/* Left Section */}
             <Col xs={12} md={6} className="text-center">
               <Image className={styles.productImage}
-                src="/images/1.jpg"
+                src={product?.img}
                 alt="Product"
               />
             </Col>
