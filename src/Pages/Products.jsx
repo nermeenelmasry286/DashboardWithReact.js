@@ -12,7 +12,7 @@ export function Products() {
     <h3 className={`${styles.mainHeader}`}>Our Product</h3>
     
 <div className="d-flex justify-content-between align-items-center">
-  <Link to={'3/edit'}>
+  <Link to={'0/edit'}>
   <StyledButton>
     Add New Product
   </StyledButton>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { SharedLayout } from './SharedLayout';
-import { AddProduct } from '../Pages/AddProduct';
+import { ProductForm } from '../Pages/ProductForm';
 import { Products } from '../Pages/Products';
 import { ProductDetails } from '../Pages/ProductDetails';
 import { NotFound } from '../Pages/NotFound';
@@ -18,7 +18,7 @@ export function MainLayout() {
 
           
           <Route path="Products" element={<Products />} />
-          <Route path="Products/:id/edit" element={<AddProduct />} />
+          <Route path="Products/:id/edit" element={<ProductForm />} />
           <Route path="Products/:id" element={<ProductDetails />} />
           
           <Route path="*" element={<NotFound />} />

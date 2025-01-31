@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import Form from 'react-bootstrap/Form';
 
 
 export const Container = styled.div`
@@ -22,7 +21,7 @@ export const Heading = styled.h2`
 `;
 
 
-export const StyledForm = styled(Form)`
+export const StyledForm = styled.div`
   margin-top: 5px; 
 
   .form-control {

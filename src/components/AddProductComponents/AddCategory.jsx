@@ -1,53 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Form from 'react-bootstrap/Form';
-import { Container, Heading, StyledForm } from '../../Custom/MainForm';
-import {StyledButton} from '../../Custom/MainButton';
+import { Container, Heading, StyledForm } from '../../Custom/MainFormSection';
+import { StyledButton } from '../../Custom/MainButton';
 
-export function AddCategoryForm() {
-  const [categoryName, setCategoryName] = useState('');
-  const [addedCategory, setAddedCategory] = useState(null);
-
-
-  const handleCategoryChange = (event) => {
-    setCategoryName(event.target.value);
-  };
-
-  const handleAddCategory = () => {
-    if (categoryName.trim()) {
-      setAddedCategory(categoryName);  
-      setCategoryName(''); 
-    }
-  };
-
+export function AddCategoryForm({ categoryName, handleAddCategory }) {
   return (
     <Container className="container-fluid">
       <Heading>Add Category</Heading>
       <StyledForm>
-       
         <Form.Group className="mb-3" controlId="categoryName">
           <Form.Label>Category Name</Form.Label>
           <Form.Control 
             type="text" 
             placeholder="Enter Category Name" 
             value={categoryName}
-            onChange={handleCategoryChange}
+            onChange={handleAddCategory}
           />
         </Form.Group>
-
-      
-        <StyledButton 
-          
-          onClick={handleAddCategory}
-        >
+        {/* <StyledButton >
           Add Category
-        </StyledButton>
-
-      
-        {addedCategory && (
-          <div className="mt-3">
-            <p><strong>Added Category: </strong>{addedCategory}</p>
-          </div>
-        )}
+        </StyledButton> */}
       </StyledForm>
     </Container>
   );

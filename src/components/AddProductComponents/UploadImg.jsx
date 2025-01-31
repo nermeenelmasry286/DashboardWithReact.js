@@ -1,27 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Form from 'react-bootstrap/Form';
-import { Container, Heading, StyledForm } from '../../Custom/MainForm';
+import { Container, Heading, StyledForm } from '../../Custom/MainFormSection';
 
-export function UploadImgForm() {
-  const [imagePreview, setImagePreview] = useState(null);
-
- 
-  const handleImageChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setImagePreview(reader.result); 
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
+export function UploadImgForm({ imagePreview, handleImageChange }) {
   return (
     <Container className="container-fluid">
       <Heading>Upload Image</Heading>
       <StyledForm>
-        
         <Form.Group className="mb-3" controlId="productImage">
           <Form.Label>Product Photo</Form.Label>
           <Form.Control 
@@ -30,8 +15,6 @@ export function UploadImgForm() {
             onChange={handleImageChange}
           />
         </Form.Group>
-
-       
         <div className="mt-3">
           {!imagePreview ? (
             <div 
