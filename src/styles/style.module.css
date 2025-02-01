@@ -39,3 +39,60 @@
   height: auto;
 }
 
+/* Table container styles */
+.tableContainer {
+  padding: 20px;
+  background: #f8f9fd;
+  border-radius: 15px;
+  box-shadow: rgba(133, 189, 215, 0.88) 0px 10px 10px -8px;
+  border: 2px solid #fff;
+  margin: 15px auto;
+  max-width: 100%;
+}
+
+/* Product image styles */
+.productImage {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* Product title styles */
+.productTitle {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Product description styles */
+.productDescripition {
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 10px;
+}
+
+/* Product details (price, stock, etc.) */
+.productDetails {
+  font-size: 1.3rem;
+  margin-top: 10px;
+  color: #333;
+}
+
+/* Back button styles */
+.backButton {
+  background-color: #0f79a3;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.backButton:hover {
+  background-color: #0d6d8c;
+}
+
+/* Styling for stars */
+.productDetails .FaStar {
+  font-size: 1.5rem;
+  color: yellow;
+}

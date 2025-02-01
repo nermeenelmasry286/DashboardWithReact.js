@@ -1,5 +1,3 @@
-/* ProductList.module.css */
-
 .tableContainer {
     padding: 20px;
     background: #f8f9fd;
@@ -42,19 +40,14 @@
     cursor: pointer;
   }
   
-  .styledTable tbody td {
+  .styledTable td {
     text-align: center;
     padding: 10px;
     font-size: 16px;
     color: #333;
   }
   
-  .productImage {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .actionLinks {
+  .actions {
     font-size: 1.5rem;
     display: flex;
     gap: 10px;
@@ -62,20 +55,7 @@
     align-items: center;
   }
   
-  .actionLinks a {
-    color: inherit;
+  .actions a {
     text-decoration: none;
-  }
-  
-  .actionLinks .deleteIcon {
-    color: rgb(255 69 69);
-  }
-  
-  .actionLinks .editIcon {
-    color: #78ca78;
-  }
-  
-  .actionLinks .viewIcon {
-    color: rgb(108 180 202);
   }
   

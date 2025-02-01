@@ -1,12 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Image, Container, Row, Col } from "react-bootstrap";
-import { StyledTableContainer } from "../Custom/MainTable";
-import { StyledButton } from "../Custom/MainButton";
 import { FaStar } from "react-icons/fa6";
-import { useState, useEffect } from 'react';
 import { getProductById } from '../Api/productApi';
 import { Link, useParams } from 'react-router-dom';
-import styles from '../styles/style.module.css';
+import styles from '../styles/style.module.css'; 
+import { StyledButton } from '../Custom/MainButton';
 
 export function ProductDetails() {
   const { id } = useParams();
@@ -22,15 +20,12 @@ export function ProductDetails() {
         Product Details
       </h3>
 
-      <StyledTableContainer>
+      <div className={styles.tableContainer}>
         <Container>
           <Row className="align-items-center">
             {/* Left Section */}
             <Col xs={12} md={6} className="text-center">
-              <Image className={styles.productImage}
-                src={product?.img}
-                alt="Product"
-              />
+              <Image className={styles.productImage} src={product?.img} alt="Product" />
             </Col>
 
             {/* Right Section */}
@@ -41,23 +36,23 @@ export function ProductDetails() {
               <p className={styles.productDescripition}>{product?.description}</p>
               <h3 className={styles.productDetails}>Product Price: {product?.price}</h3>
               <h3 className={styles.productDetails}>Product Quantity: {product?.stock}</h3>
-              <div style={{ color: "yellow", fontSize: "1.5rem" }}>
+              {/* <div style={{ color: "yellow", fontSize: "1.5rem" }}>
                 <FaStar />
                 <FaStar />
                 <FaStar />
                 <FaStar />
                 <FaStar />
-              </div>
+              </div> */}
               <h4 className={styles.productDetails}>Size: {product?.size}</h4>
               <h4 className={styles.productDetails}>Gender: {product?.gender}</h4>
               <h4 className={styles.productDetails}>Category: {product?.category}</h4>
               <Link to={'/Products'}>
-                <StyledButton className="mt-3">Back to Products</StyledButton>
+                <StyledButton>Back to Products</StyledButton>
               </Link>
             </Col>
           </Row>
         </Container>
-      </StyledTableContainer>
+      </div>
     </main>
   );
 }
