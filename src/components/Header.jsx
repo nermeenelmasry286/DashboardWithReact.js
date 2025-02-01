@@ -1,43 +1,43 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import { BsHouseDoor, BsBox, BsPerson, BsCart, BsInfoCircle, BsPhone, BsGear, BsBell, BsEnvelope, BsSun, BsMoon } from 'react-icons/bs';
 import styles from '../styles/Header.module.css';
 import { Link } from 'react-router-dom';
+import { ThemeContext } from '../Layout/SharedLayout'; 
 
 export function Header() {
   const [show, setShow] = useState(false);
-  const [dark, setDark] = useState(false);
+  const { mode, toggleMode } = useContext(ThemeContext); 
+  const [, setMode] = useState(mode); 
+
 
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      setDark(savedTheme === 'dark');
+    if (savedTheme && savedTheme !== mode) {
+      setMode(savedTheme);
     }
   }, []);
 
-  const toggleDarkMode = () => {
-    setDark((prev) => {
-      const newTheme = !prev;
-      localStorage.setItem('theme', newTheme ? 'dark' : 'light');
-      return newTheme;
-    });
-  };
+  useEffect(() => {
+    localStorage.setItem('theme', mode); 
+  }, [mode]);
 
   return (
     <>
-      <Navbar fixed="top" expand={false} className={`${dark ? styles.navbarDark : styles.navbarLight}`}>
+      <Navbar fixed="top" expand={false} className={`${mode === 'dark' ? styles.navbarDark : styles.navbarLight}`}>
         <Container fluid className="d-flex justify-content-between align-items-center">
           <Navbar.Brand
             href="#"
-            className={`${dark ? styles.navbarBrandDark : styles.navbarBrandLight}`}>
+            className={`${mode === 'dark' ? styles.navbarBrandDark : styles.navbarBrandLight}`}
+          >
             <Navbar.Toggle
               aria-controls="offcanvasNavbar"
-              className={`${dark ? styles.toggleDark : styles.toggleLight}`}
+              className={`${mode === 'dark' ? styles.toggleDark : styles.toggleLight}`}
               onClick={handleShow}
             />
             My Store
@@ -45,10 +45,10 @@ export function Header() {
 
           <div className="d-flex align-items-center gap-3">
             <img src="/images/1.jpeg" alt="User" className={styles.userPhoto} />
-            <div className={`${dark ? styles.textDark : styles.textLight}`}>Batata</div>
-            <div onClick={toggleDarkMode} className={styles.darkModeToggle}>
-              <BsSun style={{ fontSize: '20px', color:'#1091d3',display: dark ? 'none' : 'block' }} />
-              <BsMoon style={{ fontSize: '20px', display: dark ? 'block' : 'none' }} />
+            <div className={`${mode === 'dark' ? styles.textDark : styles.textLight}`}>Batata</div>
+            <div onClick={toggleMode} className={styles.darkModeToggle}>
+              <BsSun style={{ fontSize: '20px', color: '#1091d3', display: mode === 'light' ? 'block' : 'none' }} />
+              <BsMoon style={{ fontSize: '20px', display: mode === 'dark' ? 'block' : 'none' }} />
             </div>
           </div>
         </Container>
@@ -60,46 +60,46 @@ export function Header() {
         id="offcanvasNavbar"
         aria-labelledby="offcanvasNavbarLabel"
         placement="start"
-        className={`${dark ? styles.offcanvasDark : styles.offcanvasLight}`}
+        className={`${mode === 'dark' ? styles.offcanvasDark : styles.offcanvasLight}`}
       >
         <Offcanvas.Header closeButton>
           <Offcanvas.Title
             id="offcanvasNavbarLabel"
-            className={`${dark ? styles.offcanvasTitleDark : styles.offcanvasTitleLight}`}
+            className={`${mode === 'dark' ? styles.offcanvasTitleDark : styles.offcanvasTitleLight}`}
           >
             My Store
           </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <div className={`${dark ? styles.navLinksDark : styles.navLinksLight}`}>
-            <Link to="/" className={`${dark?styles.navLinkDark:styles.navLink}`}>
+          <div className={`${mode === 'dark' ? styles.navLinksDark : styles.navLinksLight}`}>
+            <Link to="/" className={`${mode === 'dark' ? styles.navLinkDark : styles.navLink}`}>
               <BsHouseDoor /> Home
             </Link>
-            <Link to="/products" className={`${dark?styles.navLinkDark:styles.navLink}`}>
+            <Link to="/products" className={`${mode === 'dark' ? styles.navLinkDark : styles.navLink}`}>
               <BsBox /> Products
             </Link>
-            <Link to="/orders" className={`${dark?styles.navLinkDark:styles.navLink}`}>
+            <Link to="/orders" className={`${mode === 'dark' ? styles.navLinkDark : styles.navLink}`}>
               <BsCart /> Orders
             </Link>
-            <Link to="/profile" className={`${dark?styles.navLinkDark:styles.navLink}`}>
+            <Link to="/profile" className={`${mode === 'dark' ? styles.navLinkDark : styles.navLink}`}>
               <BsPerson /> Profile
             </Link>
-            <Link to="/about" className={`${dark?styles.navLinkDark:styles.navLink}`}>
+            <Link to="/about" className={`${mode === 'dark' ? styles.navLinkDark : styles.navLink}`}>
               <BsInfoCircle /> About
             </Link>
-            <Link to="/contact" className={`${dark?styles.navLinkDark:styles.navLink}`}>
+            <Link to="/contact" className={`${mode === 'dark' ? styles.navLinkDark : styles.navLink}`}>
               <BsPhone /> Contact
             </Link>
-            <Link to="/services" className={`${dark?styles.navLinkDark:styles.navLink}`}>
+            <Link to="/services" className={`${mode === 'dark' ? styles.navLinkDark : styles.navLink}`}>
               <BsBox /> Services
             </Link>
-            <Link to="/settings" className={`${dark?styles.navLinkDark:styles.navLink}`}>
+            <Link to="/settings" className={`${mode === 'dark' ? styles.navLinkDark : styles.navLink}`}>
               <BsGear /> Settings
             </Link>
-            <Link to="/notifications" className={`${dark?styles.navLinkDark:styles.navLink}`}>
+            <Link to="/notifications" className={`${mode === 'dark' ? styles.navLinkDark : styles.navLink}`}>
               <BsBell /> Notifications
             </Link>
-            <Link to="/messages" className={`${dark?styles.navLinkDark:styles.navLink}`}>
+            <Link to="/messages" className={`${mode === 'dark' ? styles.navLinkDark : styles.navLink}`}>
               <BsEnvelope /> Messages
             </Link>
           </div>
