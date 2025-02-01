@@ -72,34 +72,34 @@ export function Header() {
         </Offcanvas.Header>
         <Offcanvas.Body>
           <div className={`${dark ? styles.navLinksDark : styles.navLinksLight}`}>
-            <Link to="/" className={`${styles.navLink}`}>
+            <Link to="/" className={`${dark?styles.navLinkDark:styles.navLink}`}>
               <BsHouseDoor /> Home
             </Link>
-            <Link to="/products" className={`${styles.navLink}`}>
+            <Link to="/products" className={`${dark?styles.navLinkDark:styles.navLink}`}>
               <BsBox /> Products
             </Link>
-            <Link to="/orders" className={`${styles.navLink}`}>
+            <Link to="/orders" className={`${dark?styles.navLinkDark:styles.navLink}`}>
               <BsCart /> Orders
             </Link>
-            <Link to="/profile" className={`${styles.navLink}`}>
+            <Link to="/profile" className={`${dark?styles.navLinkDark:styles.navLink}`}>
               <BsPerson /> Profile
             </Link>
-            <Link to="/about" className={`${styles.navLink}`}>
+            <Link to="/about" className={`${dark?styles.navLinkDark:styles.navLink}`}>
               <BsInfoCircle /> About
             </Link>
-            <Link to="/contact" className={`${styles.navLink}`}>
+            <Link to="/contact" className={`${dark?styles.navLinkDark:styles.navLink}`}>
               <BsPhone /> Contact
             </Link>
-            <Link to="/services" className={`${styles.navLink}`}>
+            <Link to="/services" className={`${dark?styles.navLinkDark:styles.navLink}`}>
               <BsBox /> Services
             </Link>
-            <Link to="/settings" className={`${styles.navLink}`}>
+            <Link to="/settings" className={`${dark?styles.navLinkDark:styles.navLink}`}>
               <BsGear /> Settings
             </Link>
-            <Link to="/notifications" className={`${styles.navLink}`}>
+            <Link to="/notifications" className={`${dark?styles.navLinkDark:styles.navLink}`}>
               <BsBell /> Notifications
             </Link>
-            <Link to="/messages" className={`${styles.navLink}`}>
+            <Link to="/messages" className={`${dark?styles.navLinkDark:styles.navLink}`}>
               <BsEnvelope /> Messages
             </Link>
           </div>

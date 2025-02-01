@@ -1,12 +1,16 @@
+:root {
+    --color-main: #1091d3;
+    --color-header-bg: #bfd3dd;
+}
 
 .customMargin {
   margin-top: 120px;
   margin-bottom: 70px;
 }
 .mainHeader{
-  color: #1091d3;
+  color: var(--color-main);
    text-align: center;
-   background-color: #bfd3dd;
+   background-color: var(--color-header-bg);
    height: 50px;
    line-height: 50px;
    border-radius: 4px;

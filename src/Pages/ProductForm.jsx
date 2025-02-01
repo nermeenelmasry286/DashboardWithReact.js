@@ -114,12 +114,12 @@ export function ProductForm() {
         <StyledButton type='submit'>
           <FaCheck /> {id==0?'Add Product':'Edit Product'}
         </StyledButton>
-        <div className="row w-100">
-          <div className="col-12 col-md-6">
+        <div className="row w-100 ms-0">
+          <div className="col-12 col-md-6 mx-0">
             <GeneralProductInfo productDetails={productDetails} handleInputChange={handleProductChange} />
             <PriceAndStock productDetails={priceDetails} handleInputChange={handlePriceChange} />
           </div>
-          <div className="col-12 col-md-6">
+          <div className="col-12 col-md-6 mx-0">
             <UploadImgForm imagePreview={imagePreview} handleImageChange={handleImageChange} />
             <AddCategoryForm 
               categoryName={categoryName} 

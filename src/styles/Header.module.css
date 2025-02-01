@@ -1,100 +1,135 @@
+:root {
+    --color-dark-bg: #343a40;
+    --color-light-bg: #f8f9fd;
+    --color-dark-shadow: rgba(0, 0, 0, 0.88);
+    --color-light-shadow: rgba(133, 189, 215, 0.88);
+    --color-dark-text: #ffffff;
+    --color-light-text: #1091d3;
+    --color-light-hover-bg: #e2e6ea;
+    --color-dark-hover-bg: #2b2e33;
+}
+
 .navbarDark {
-    background-color: #343a40;
-    box-shadow: rgba(0, 0, 0, 0.88) 0px 10px 10px -8px;
-  }
-  
-  .navbarLight {
-    background-color: #f8f9fd;
-    box-shadow: rgba(133, 189, 215, 0.88) 0px 10px 10px -8px;
-  }
-  
-  .navbarBrandDark {
-    color: #ffffff;
+    background-color: var(--color-dark-bg);
+    box-shadow: var(--color-dark-shadow) 0px 10px 10px -8px;
+}
+
+.navbarLight {
+    background-color: var(--color-light-bg);
+    box-shadow: var(--color-light-shadow) 0px 10px 10px -8px;
+}
+
+.navbarBrandDark {
+    color: var(--color-dark-text);
     font-size: 30px;
     font-weight: 900;
     margin-left: 10px;
-  }
-  
-  .navbarBrandLight {
-    color: #1091d3;
+}
+
+.navbarBrandLight {
+    color: var(--color-light-text);
     font-size: 30px;
     font-weight: 900;
     margin-left: 10px;
-  }
-  
-  .toggleDark {
-    color: #ffffff;
+}
+
+.navbarBrandDark:hover {
+    color: var(--color-dark-text);
+}
+
+.navbarBrandLight:hover {
+    color: var(--color-light-text);
+}
+
+.toggleDark {
+    color: var(--color-dark-text);
     font-size: 15px;
     margin-left: 0;
     margin-right: 20px;
     padding: 10px;
-  }
-  
-  .toggleLight {
-    color: #1091d3;
+    border: 1px solid var(--color-dark-text);
+    background-color: var(--color-dark-bg);
+}
+
+.toggleDark:hover {
+    color: var(--color-dark-text);
+    border: 1px solid var(--color-dark-text);
+    background-color: var(--color-dark-hover-bg);
+}
+
+.toggleLight {
+    color: var(--color-light-text);
     font-size: 15px;
     margin-left: 0;
     margin-right: 20px;
     padding: 10px;
-  }
-  
-  .userPhoto {
+    border: 1px solid var(--color-light-text);
+    background-color: var(--color-light-bg);
+}
+
+.toggleLight:hover {
+    color: var(--color-light-text);
+    border: 1px solid var(--color-light-text);
+    background-color: var(--color-light-hover-bg);
+}
+
+.userPhoto {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     object-fit: cover;
-  }
-  
-  .textDark {
-    color: #ffffff;
+}
+
+.textDark {
+    color: var(--color-dark-text);
     font-size: 18px;
-  }
-  
-  .textLight {
-    color: #1091d3;
+}
+
+.textLight {
+    color: var(--color-light-text);
     font-size: 18px;
-  }
-  
-  .darkModeToggle {
+}
+
+.darkModeToggle {
     display: flex;
     gap: 5px;
     cursor: pointer;
-    color: #ffffff;
+    color: var(--color-dark-text);
     font-size: 20px;
     align-items: center;
-  }
- 
-  .offcanvasDark {
-    background-color: #343a40;
-    width:250px !important;
-  }
-  
-  .offcanvasLight {
-    background-color: #f8f9fd;
-    width:250px !important;
-  }
-  
-  .offcanvasTitleDark {
-    color: #ffffff;
+}
+
+.offcanvasDark {
+    background-color: var(--color-dark-bg);
+    width: 250px !important;
+}
+
+.offcanvasLight {
+    background-color: var(--color-light-bg);
+    width: 250px !important;
+}
+
+.offcanvasTitleDark {
+    color: var(--color-dark-text);
     font-size: 30px;
     font-weight: 900;
-  }
-  
-  .offcanvasTitleLight {
-    color: #ffffff;
+}
+
+.offcanvasTitleLight {
+    color: var(--color-light-text);
     font-size: 30px;
     font-weight: 900;
-  }
-  
-  .navLinksDark {
-    color: #ffffff !important;
-  }
-  
-  .navLinksLight {
+}
+
+.navLinksDark {
+    color: var(--color-dark-text) !important;
+}
+
+.navLinksLight {
     color: #f0f0f0 !important;
-  }
-  
-  .navLink {
+}
+
+.navLink {
     display: flex;
     align-items: center;
     font-size: 18px;
@@ -103,6 +138,17 @@
     margin-bottom: 20px;
     text-decoration: none;
     gap: 20px;
-  }
-  
-  
+    color: var(--color-light-text);
+}
+
+.navLinkDark {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 600;
+    margin-left: 30px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    gap: 20px;
+    color: var(--color-dark-text);
+}
