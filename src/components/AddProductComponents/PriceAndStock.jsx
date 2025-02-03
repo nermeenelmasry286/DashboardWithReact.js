@@ -32,7 +32,7 @@ export function PriceAndStock({ productDetails, handleInputChange }) {
                               min="1"
                               placeholder="Enter Product Stock"
                               name="stock"
-                              value={productDetails.stock}
+                              value={productDetails.stock || ''}
                               onChange={handleInputChange}
                           />
                       </Form.Group>
@@ -48,7 +48,7 @@ export function PriceAndStock({ productDetails, handleInputChange }) {
                               type="number"
                               placeholder="Enter Product Discount"
                               name="discount"
-                              value={productDetails.discount}
+                              value={productDetails.discount || ''}
                               onChange={handleInputChange}
                           />
                       </Form.Group>
