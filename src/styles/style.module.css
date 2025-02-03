@@ -10,7 +10,7 @@
 .mainHeader{
   color: var(--color-main);
    text-align: center;
-   background-color: var(--color-header-bg);
+   /* background-color: var(--color-header-bg); */
    height: 50px;
    line-height: 50px;
    border-radius: 4px;

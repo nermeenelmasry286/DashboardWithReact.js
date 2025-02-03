@@ -111,9 +111,7 @@ export function ProductForm() {
         <h3 className={`${styles.mainHeader}`}>{id==0?'Add New Product':'Edit Product'}</h3>
       </header>
       <Form onSubmit={handleSubmit}>
-        <StyledButton type='submit'>
-          <FaCheck /> {id==0?'Add Product':'Edit Product'}
-        </StyledButton>
+       
         <div className="row w-100 ms-0">
           <div className="col-12 col-md-6 mx-0">
             <GeneralProductInfo productDetails={productDetails} handleInputChange={handleProductChange} />
@@ -126,6 +124,9 @@ export function ProductForm() {
             
               handleAddCategory={handleAddCategory} 
             />
+            <StyledButton type='submit' style={{marginLeft:'30px'}}>
+          <FaCheck /> {id==0?'Add Product':'Edit Product'}
+        </StyledButton>
           </div>
         </div>
       </Form>

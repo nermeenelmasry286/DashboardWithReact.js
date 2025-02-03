@@ -46,10 +46,10 @@ export function Header() {
           <div className="d-flex align-items-center gap-3">
             <img src="/images/1.jpeg" alt="User" className={styles.userPhoto} />
             <div className={`${mode === 'dark' ? styles.textDark : styles.textLight}`}>Batata</div>
-            <div onClick={toggleMode} className={styles.darkModeToggle}>
+            {/* <div onClick={toggleMode} className={styles.darkModeToggle}>
               <BsSun style={{ fontSize: '20px', color: '#1091d3', display: mode === 'light' ? 'block' : 'none' }} />
               <BsMoon style={{ fontSize: '20px', display: mode === 'dark' ? 'block' : 'none' }} />
-            </div>
+            </div> */}
           </div>
         </Container>
       </Navbar>

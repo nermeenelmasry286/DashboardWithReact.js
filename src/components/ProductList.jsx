@@ -4,9 +4,8 @@ import { FaStar, FaEdit, FaEye } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { deleteProduct, getProducts } from "../Api/productApi";
-import styles from "../styles/ProductList.module.css"; // Assuming your CSS is in this file
-
-export function ProductList() {
+import styles from "../styles/ProductList.module.css"; 
+export function ProductList({ searchQuery }) {
   const [product, setProduct] = useState([]);
 
   useEffect(() => {
@@ -19,6 +18,10 @@ export function ProductList() {
     await deleteProduct(id);
     setProduct(product.filter((product) => product.id !== id));
   };
+
+  const filteredProducts = product.filter((product) =>
+    product.name.toLowerCase().startsWith(searchQuery.toLowerCase())
+  );
 
   return (
     <div className={styles.tableContainer}>
@@ -37,7 +40,7 @@ export function ProductList() {
           </tr>
         </thead>
         <tbody>
-          {product.map((product) => (
+          {filteredProducts.map((product) => (
             <tr key={product.id}>
               <td>{product.id}</td>
               <td>
