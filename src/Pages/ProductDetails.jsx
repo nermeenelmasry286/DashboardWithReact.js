@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Image, Container, Row, Col } from "react-bootstrap";
-import { FaStar } from "react-icons/fa6";
 import { getProductById } from '../Api/productApi';
 import { Link, useParams } from 'react-router-dom';
 import styles from '../styles/style.module.css'; 
@@ -36,13 +35,6 @@ export function ProductDetails() {
               <p className={styles.productDescripition}>{product?.description}</p>
               <h3 className={styles.productDetails}>Product Price: {product?.price}</h3>
               <h3 className={styles.productDetails}>Product Quantity: {product?.stock}</h3>
-              {/* <div style={{ color: "yellow", fontSize: "1.5rem" }}>
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStar />
-              </div> */}
               <h4 className={styles.productDetails}>Size: {product?.size}</h4>
               <h4 className={styles.productDetails}>Gender: {product?.gender}</h4>
               <h4 className={styles.productDetails}>Category: {product?.category}</h4>
