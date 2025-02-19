@@ -1,36 +1,27 @@
 import React, { createContext } from 'react';
 import { Header } from '../components/Header';
-import { Outlet } from 'react-router-dom'; 
-
+import { Outlet, useLocation } from 'react-router-dom'; 
 
 export const ThemeContext = createContext();
 
 
-export const ThemeProvider = ({ children }) => {
-  const [mode, setMode] = React.useState('light'); 
-
- 
-  const toggleMode = () => {
-    setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
-  };
-
-  return (
-   
-    <ThemeContext.Provider value={{ mode, toggleMode }}>
-      {children}
-    </ThemeContext.Provider>
-  );
-};
 
 export function SharedLayout() {
+  const location = useLocation();
+
+  // Define routes where the Header should be hidden
+  const hideHeaderRoutes = ['/login', '/signup'];
+
   return (
-    <ThemeProvider>
+    
       <div className="container-fluid p-0">
-        <Header />
+        {/* Only show Header if the current route is NOT in hideHeaderRoutes */}
+        {!hideHeaderRoutes.includes(location.pathname) && <Header />}
+        
         <div className="content-wrapper">
           <Outlet />
         </div>
       </div>
-    </ThemeProvider>
+  
   );
 }

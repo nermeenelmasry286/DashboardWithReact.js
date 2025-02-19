@@ -1,8 +1,11 @@
-import { configureStore } from '@reduxjs/toolkit';
-import modeReducer from './Slices/ModeSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import productsReducer from "./Slices/productsSlice";
+
 export const store = configureStore({
     reducer: {
-        modeStatus: modeReducer
-    }
-})
+    
+        products: productsReducer,
+    },
+});
+
 export default store;

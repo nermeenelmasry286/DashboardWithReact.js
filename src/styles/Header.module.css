@@ -1,76 +1,40 @@
 :root {
-    --color-dark-bg: #343a40;
-    --color-light-bg: #f8f9fd;
-    --color-dark-shadow: rgba(0, 0, 0, 0.88);
-    --color-light-shadow: rgba(133, 189, 215, 0.88);
-    --color-dark-text: #ffffff;
-    --color-light-text: #1091d3;
-    --color-light-hover-bg: #e2e6ea;
-    --color-dark-hover-bg: #2b2e33;
+    --color-bg: #f8f9fd;
+    --color-shadow: rgba(133, 189, 215, 0.88);
+    --color-text: #1091d3;
+    --color-hover-bg: #e2e6ea;
 }
 
-.navbarDark {
-    background-color: var(--color-dark-bg);
-    box-shadow: var(--color-dark-shadow) 0px 10px 10px -8px;
+.navbar {
+    background-color: var(--color-bg);
+    box-shadow: var(--color-shadow) 0px 10px 10px -8px;
 }
 
-.navbarLight {
-    background-color: var(--color-light-bg);
-    box-shadow: var(--color-light-shadow) 0px 10px 10px -8px;
-}
-
-.navbarBrandDark {
-    color: var(--color-dark-text);
+.navbarBrand {
+    color: var(--color-text);
     font-size: 30px;
     font-weight: 900;
     margin-left: 10px;
 }
 
-.navbarBrandLight {
-    color: var(--color-light-text);
-    font-size: 30px;
-    font-weight: 900;
-    margin-left: 10px;
+.navbarBrand:hover {
+    color: var(--color-text);
 }
 
-.navbarBrandDark:hover {
-    color: var(--color-dark-text);
-}
-
-.navbarBrandLight:hover {
-    color: var(--color-light-text);
-}
-
-.toggleDark {
-    color: var(--color-dark-text);
+.toggle {
+    color: var(--color-text);
     font-size: 15px;
     margin-left: 0;
     margin-right: 20px;
     padding: 10px;
-    border: 1px solid var(--color-dark-text);
-    background-color: var(--color-dark-bg);
+    border: 1px solid var(--color-text);
+    background-color: var(--color-bg);
 }
 
-.toggleDark:hover {
-    color: var(--color-dark-text);
-    border: 1px solid var(--color-dark-text);
-    background-color: var(--color-dark-hover-bg);
-}
-
-.toggleLight {
-    color: var(--color-light-text);
-    font-size: 15px;
-    margin-left: 0;
-    margin-right: 20px;
-    padding: 10px;
-    border: 1px solid var(--color-light-text);
-    background-color: var(--color-light-bg);
-}
-
-.toggleLight:hover {
-    color: var(--color-light-text);
-    border: 1px solid var(--color-light-text);
-    background-color: var(--color-light-hover-bg);
+.toggle:hover {
+    color: var(--color-text);
+    border: 1px solid var(--color-text);
+    background-color: var(--color-hover-bg);
 }
 
 .userPhoto {
@@ -80,52 +44,23 @@
     object-fit: cover;
 }
 
-.textDark {
-    color: var(--color-dark-text);
+.userName {
+    color: var(--color-text);
     font-size: 18px;
 }
 
-.textLight {
-    color: var(--color-light-text);
-    font-size: 18px;
-}
-
-.darkModeToggle {
-    display: flex;
-    gap: 5px;
-    cursor: pointer;
-    color: var(--color-dark-text);
-    font-size: 20px;
-    align-items: center;
-}
-
-.offcanvasDark {
-    background-color: var(--color-dark-bg);
+.offcanvas {
+    background-color: var(--color-bg);
     width: 250px !important;
 }
 
-.offcanvasLight {
-    background-color: var(--color-light-bg);
-    width: 250px !important;
-}
-
-.offcanvasTitleDark {
-    color: var(--color-dark-text);
+.offcanvasTitle {
+    color: var(--color-text);
     font-size: 30px;
     font-weight: 900;
 }
 
-.offcanvasTitleLight {
-    color: var(--color-light-text);
-    font-size: 30px;
-    font-weight: 900;
-}
-
-.navLinksDark {
-    color: var(--color-dark-text) !important;
-}
-
-.navLinksLight {
+.navLinks {
     color: #f0f0f0 !important;
 }
 
@@ -138,17 +73,5 @@
     margin-bottom: 20px;
     text-decoration: none;
     gap: 20px;
-    color: var(--color-light-text);
-}
-
-.navLinkDark {
-    display: flex;
-    align-items: center;
-    font-size: 18px;
-    font-weight: 600;
-    margin-left: 30px;
-    margin-bottom: 20px;
-    text-decoration: none;
-    gap: 20px;
-    color: var(--color-dark-text);
+    color: var(--color-text);
 }
