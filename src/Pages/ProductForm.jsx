@@ -6,14 +6,16 @@ import { AddCategoryForm } from '../components/AddProductComponents/AddCategory'
 import { StyledButton } from '../Custom/MainButton';
 import { FaCheck } from "react-icons/fa";
 import Form from 'react-bootstrap/Form';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import styles from '../styles/style.module.css';
-import { createProduct ,getProductById,updateProduct} from '../Api/productApi';  
-import { useParams } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectProductById, createProduct, updateProduct } from '../store/Slices/productsSlice';
 
 export function ProductForm() {
-  const {id}= useParams();
- 
+  const { id } = useParams();
+  const product = useSelector((state) => selectProductById(state, id));
+  const dispatch = useDispatch();
+
   const [productDetails, setProductDetails] = React.useState({
     name: '',
     description: '',
@@ -38,10 +40,12 @@ export function ProductForm() {
     const { name, value } = e.target;
     setPriceDetails({ ...priceDetails, [name]: value });
   };
+
   const handleAddCategory = (e) => {
     const { value } = e.target;
     setCategoryName(value);
   };
+
   const handleImageChange = (event) => {
     const file = event.target.files[0];
     if (file) {
@@ -53,54 +57,43 @@ export function ProductForm() {
     }
   };
 
-
-
- 
-
   const finalProductDetails = { 
     ...productDetails, 
     ...priceDetails, 
-    img: imagePreview ,
+    img: imagePreview,
     category: categoryName
-
   };
 
   const navigate = useNavigate();
-  useEffect(() => {  
-    const getProduct = async () => {
-     if(id!=0){
-      const response= await getProductById(id);
-      const data = response.data;
-      
+
+  useEffect(() => {
+    if (id && product) {
       setProductDetails({
-        name: data.name,
-        description: data.description,
-        gender: data.gender,
-        size: data.size
+        name: product.name,
+        description: product.description,
+        gender: product.gender,
+        size: product.size
       });
 
       setPriceDetails({
-        basePrice: data.basePrice,
-        stock: data.stock,
-        discount: data.discount,
-        discountType: data.discountType
+        basePrice: product.basePrice,
+        stock: product.stock,
+        discount: product.discount,
+        discountType: product.discountType
       });
 
-      setImagePreview(data.img);
-      setCategoryName(data.category);
+      setImagePreview(product.img);
+      setCategoryName(product.category);
     }
-
-    }
-    getProduct();
-   }, []);
+  }, [id, product]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (id != 0) {
-      await updateProduct(id, finalProductDetails); 
+    if (id) {
+      await dispatch(updateProduct({ id, product: finalProductDetails }));
       navigate('/Products');
     } else {
-      await createProduct(finalProductDetails);
+      await dispatch(createProduct(finalProductDetails));
       navigate('/Products');
     }
   };
@@ -108,7 +101,7 @@ export function ProductForm() {
   return (
     <main className={`container ${styles.customMargin}`}>
       <header style={{ margin: '2px' }}>
-        <h3 className={`${styles.mainHeader}`}>{id==0?'Add New Product':'Edit Product'}</h3>
+        <h3 className={`${styles.mainHeader}`}>{id ? 'Edit Product' : 'Add New Product'}</h3>
       </header>
       <Form onSubmit={handleSubmit}>
         <div className="row w-100 ms-0">
@@ -123,7 +116,7 @@ export function ProductForm() {
               handleAddCategory={handleAddCategory} 
             />
             <StyledButton type='submit' style={{marginLeft:'30px'}}>
-              <FaCheck /> {id==0?'Add Product':'Edit Product'}
+              <FaCheck /> {id ? 'Edit Product' : 'Add Product'}
             </StyledButton>
           </div>
         </div>

@@ -1,25 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Table } from "react-bootstrap";
 import { FaStar, FaEdit, FaEye } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { deleteProduct, getProducts } from "../Api/productApi";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProducts, deleteProduct } from "../store/Slices/productsSlice";
 import styles from "../styles/ProductList.module.css"; 
+
 export function ProductList({ searchQuery }) {
-  const [product, setProduct] = useState([]);
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state.products.products);
+  const productStatus = useSelector((state) => state.products.status);
 
   useEffect(() => {
-    getProducts().then((response) => {
-      setProduct(response.data);
-    });
-  }, []);
+    if (productStatus === "idle") {
+      dispatch(fetchProducts());
+    }
+  }, [productStatus, dispatch]);
 
-  const deleteHandler = async (id) => {
-    await deleteProduct(id);
-    setProduct(product.filter((product) => product.id !== id));
+  const deleteHandler = (id) => {
+    dispatch(deleteProduct(id));
   };
 
-  const filteredProducts = product.filter((product) =>
+  const filteredProducts = products.filter((product) =>
     product.name.toLowerCase().startsWith(searchQuery.toLowerCase())
   );
 

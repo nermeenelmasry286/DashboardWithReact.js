@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Image, Container, Row, Col } from "react-bootstrap";
-import { getProductById } from '../Api/productApi';
 import { Link, useParams } from 'react-router-dom';
 import styles from '../styles/style.module.css'; 
 import { StyledButton } from '../Custom/MainButton';
@@ -9,15 +8,7 @@ import { useSelector } from "react-redux";
 
 export function ProductDetails() {
   const { id } = useParams();
-  // const [product, setProduct] = useState(null);
-
-  // useEffect(() => {
-  //   getProductById(id).then((response) => setProduct(response.data));
-  // }, [id]);
-
-  
-  const product = useSelector((state)=>selectProductById(state,id));
-
+  const product = useSelector((state) => selectProductById(state, id));
 
   return (
     <main className={`container ${styles.customMargin}`}>
